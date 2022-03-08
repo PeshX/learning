@@ -1,5 +1,7 @@
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
+import 'package:usb_serial/usb_serial.dart';
 
 void main() {
   runApp(const MyApp());
@@ -51,6 +53,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Scaffold(body: Center(child: SfLinearGauge())));
+    return MaterialApp(
+        home: Scaffold(
+            body: Center(
+                child: SfLinearGauge(
+      barPointers: [LinearBarPointer(value: 40)],
+    ))));
   }
 }
